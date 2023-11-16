@@ -1,12 +1,12 @@
-# Block Queries
+# Block Maska
 
-Queries are used to select blocks from a selection or region. It is used in commands like `//replace` and flags like `-m` (mask).
+Masks are used to select specific blocks from a selection or region. It is used in commands like `//replace` and flags like `-m`.
 
 # Or and And
 
 Remember that multiple blocks can be combined with a comma. For example, `stone,andesite` matches either stone or andesite.
 
-In this case, `,` here works as an OR operator. The AND operator is a space ` `, requiring the entire query to be surrounded by double quotes.
+In this case, `,` here works as an OR operator. The AND operator is a space ` `, requiring the entire mask to be surrounded by double quotes.
 
 For example, `"stone >water"` means `stone AND >water`. Note that OR gets precedence over AND, so `stone,andesite >water` is `(stone OR andesite) AND >water`.
 

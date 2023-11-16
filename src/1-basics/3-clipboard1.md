@@ -15,7 +15,7 @@ The clipboard is **relative to the player's position when it was copied or cut**
 `//copy` has three flags (options):
 * `-e` to copy entities to the clipboard.
 * `-a` to exclude air from the selection. When you paste the clipboard, the air does not get pasted along (remember air is just another block). For example, `//copy -a``
-* `-m <pattern>` to only include specific blocks from the selection. For example, `//copy -m stone`
+* `-m <mask>` to only include specific blocks from the selection. For example, `//copy -m stone`
 
 You can also have multiple options: `//copy -a -m <mask>` or `//copy -am <mask>` since `-a` does not take further arguments.
 
@@ -30,5 +30,5 @@ You can also have multiple options: `//copy -a -m <mask>` or `//copy -am <mask>`
 `//paste` has a few flags:
 * `-e` to paste entities in the clipboard.
 * `-a` to prevent air from being pasted.
-* `-m <pattern>` to only paste specific blocks in the clipboard.
+* `-m <mask>` to only paste specific blocks in the clipboard.
 * `-s` to move the current selection to the region that has been pasted.

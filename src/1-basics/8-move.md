@@ -6,6 +6,6 @@ For example, `//move 5 w` moves the blocks in the selection 5 blocks to the west
 
 It accepts the following flags:
 * `-a` to prevent air from being moved along with the contents.
-* `-m <pattern>` to only move specific blocks.
+* `-m <mask>` to only move specific blocks.
 * `-e` to also move entities.
 * `-s` to also move the selection along with the blocks.

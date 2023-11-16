@@ -10,9 +10,9 @@ If there is additional block data, you can append \[key=value\] to the block ID.
 
 `//replace` is similar to `//set`, but in this case it replaces specific blocks instead of every block in the selection.
 
-The syntax is `//replace <query> <pattern>`, for example `//replace dirt stone`.
+The syntax is `//replace <mask> <pattern>`, for example `//replace dirt stone`.
 
-Multiple blocks are also possible for both query and pattern, for example `//replace dirt,podzol stone,andesite```
+Multiple blocks are also possible for both mask and pattern, for example `//replace dirt,podzol stone,andesite```
 
 For the query, you can also select all blocks except certain blocks by prepending `!`. For example, `!stone` or `!stone,!andesite`.
 
