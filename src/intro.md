@@ -10,7 +10,9 @@ TODO
 
 The first part, `Basics` outlines basic operations like //stack, //set, etc. and is minimally what is required on the MRT to be Conductor.
 
-Additional parts after this go further into detail on the different commands that can be used for more niche cases.
+The scond part, `Intermediate` outlines more operations and tricks that are regularly used on the MRT.
+
+The third part, `Advanced` outlines operations not commonly used on the MRT amnd may be very useful.
 
 ## Author's Note
 

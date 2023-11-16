@@ -16,4 +16,5 @@ This is useful in `//replace`, especially for stairs and slabs. Prepending ^ to 
 
 For example, if I have brick stairs facing a particular direction, `//replace brick_stairs ^oak_stairs` retains the position of the stairs while replacing brick with oak.
 
-
+## Block Categories
+You can also use a block category to yield an equal distribution of blocks in the category. For example, `//set ##wool` yields all 16 colours of wool.
