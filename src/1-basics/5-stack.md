@@ -8,7 +8,7 @@ You need to give it the number of times to stack, and the dirwction to stack. Fo
 
 It also supports the following flags:
 * `-a` is like in `//paste`, to prevent the air in the selection from being stacked in the stacked sections.
-* `-m <mask>` to only stack certain blocks.
+* `-m <pattern>` to only stack certain blocks.
 * `-e` to also stack entities.
 * `-s` to shift the selection to the last section stacked.
 
