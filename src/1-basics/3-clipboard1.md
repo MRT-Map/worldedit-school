@@ -21,6 +21,12 @@ You can also have multiple options: `//copy -a -m <mask>` or `//copy -am <mask>`
 
 `//cut` has the same flags as `//copy`, together with one additional optional argument `[fill]` which sets the selection to the block(s) specified instead of air after copying. For example, `//cut stone` replaces the selection with stone after cutting.
 
+<div class="warning">
+    Clipboards may unintentionally be cleared, so if you need a backup of something you intend to `//cut`, please consider copying instead, or having a backup somewhere.
+
+    There has been one case where someone lost an entire airplane due to this
+</div>
+
 `//paste` has a few flags:
 * `-e` to paste entities in the clipboard.
 * `-a` to prevent air from being pasted.
