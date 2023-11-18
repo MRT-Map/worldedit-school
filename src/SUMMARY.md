@@ -2,7 +2,7 @@
 
 [Introduction](./intro.md)
 
-## Basics
+# Basics
 - [Selection 1 (//wand, p1/p2)](./1-basics/1-select1.md)
 - [//set and //replace](./1-basics/2-set-replace.md)
 - [Clipboard 1 (//copy, //cut, //paste)](./1-basics/3-clipboard1.md)
@@ -19,7 +19,7 @@
 - [Quiz](./1-basics/14-quiz.md)
 - [Conclusion](./1-basics/15-conclusion.md)
 
-## Intermediate
+# Intermediate
 - [Masks](./2-intermediate/masks.md)
 - [Patterns](./2-intermediate/patterns.md)
 - [More on //stack](./2-intermediate/stack.md)
