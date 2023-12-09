@@ -1,4 +1,4 @@
-# Block Maska
+# Block Masks
 
 Masks are used to select specific blocks from a selection or region. It is used in commands like `//replace` and flags like `-m`.
 

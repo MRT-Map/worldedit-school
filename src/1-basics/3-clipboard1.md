@@ -32,3 +32,5 @@ You can also have multiple options: `//copy -a -m <mask>` or `//copy -am <mask>`
 * `-a` to prevent air from being pasted.
 * `-m <mask>` to only paste specific blocks in the clipboard.
 * `-s` to move the current selection to the region that has been pasted.
+
+Note that if you want to paste entities, you must `//copy` **and** `//paste` with the `-e` flag.

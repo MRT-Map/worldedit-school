@@ -16,11 +16,11 @@ You can select the points with the wand as shown in the section above. If a cond
 
 <div class="warning">
     If a conductor is helping you with w/e:
-    * Mark p1 and p2 with clear blocks, eg. red wool in a white build
+    * Mark p1 and p2 with clear blocks, eg. diamond in a white build
     * Show the conductor where the points are
         * Stand next to the points and say "p1" or "p2"
-        * if they're near, you can also say the material, eg. "points on red wool"
+        * if they're near, you can also say the material, eg. "points on diamond"
     * Tell the conductor the operations to run
 </div>
 
-More selection types and methods are covered in TODO.
+More selection types and methods are covered [here](../2-intermediate/select.md).
