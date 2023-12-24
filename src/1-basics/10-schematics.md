@@ -10,3 +10,4 @@ To save a schematic from the clipboard, do `//schem save <file>`. For example, a
 
 However, if `7d-house` already exists, it would not save unless I overwrite it with the `-f` flag. For example, `//schem save 7d-house -f`. **Note that the old schematic is lost.**
 
+On the MRT server, schematics can be uploaded and downloaded on the [file server](https://files.minecartrapidtransit.net).

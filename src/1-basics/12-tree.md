@@ -10,4 +10,4 @@ First hold a non-placeable item and run `/tool tree <name>`, for example `/tool 
 
 `/tool deltree`, or `/deltree` removes **floating** trees. After binding it to an item, right-click a floating tree to remove it. You can make a tree floating by removing the bottom-most log block and removing leaves that touch other structures.
 
-To remove the tooling from an item, do `/tool unbind.`
+To remove the tooling from an item, do `/tool unbind`.

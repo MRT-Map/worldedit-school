@@ -12,7 +12,7 @@ The first part, `Basics` outlines basic operations like //stack, //set, etc. and
 
 The scond part, `Intermediate` outlines more operations and tricks that are regularly used on the MRT.
 
-The third part, `Advanced` outlines operations not commonly used on the MRT amnd may be very useful.
+The third part, `Advanced` outlines operations not commonly used on the MRT and may be very useful.
 
 ## Author's Note
 

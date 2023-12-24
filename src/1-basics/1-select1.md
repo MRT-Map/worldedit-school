@@ -12,15 +12,21 @@ If the conductor is doing the w/e for you, you can skip this section.
 
 The default selection is cuboid, and hence requires two points on opposite sides, p1 and p2.
 
+
+This image shows p1 and p2 indicated by diamond blocks. The fire outlines the selection after selecting them.
+![](../../images/cube-select.png)
+
 You can select the points with the wand as shown in the section above. If a conductor is helping you, see below.
 
 <div class="warning">
-    If a conductor is helping you with w/e:
-    * Mark p1 and p2 with clear blocks, eg. diamond in a white build
-    * Show the conductor where the points are
-        * Stand next to the points and say "p1" or "p2"
-        * if they're near, you can also say the material, eg. "points on diamond"
-    * Tell the conductor the operations to run
+If a conductor is helping you, you should
+
+* Mark p1 and p2 with clear blocks, eg. diamond in a white build
+* Show the conductor where the points are
+    * Stand next to the points and say "p1" or "p2"
+    * if they're near, you can also say the material, eg. "points on diamond"
+* Tell the conductor the operation(s) to run, eg. "set stone"
 </div>
+
 
 More selection types and methods are covered [here](../2-intermediate/select.md).

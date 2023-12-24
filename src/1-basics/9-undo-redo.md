@@ -7,6 +7,7 @@ It optionally accepts a number representing the number of operations to undo or 
 Note that there is usually a limit on the number of operations that you can undo or redo.
 
 <div class="warning">
-    Be careful not to acxidentally undo operations in another place that you wouldn't notice immediately! Clear your history with `//clearhistory` if needed.
+
+Be careful not to accidentally undo operations in another place that you wouldn't notice immediately! Clear your history with `//clearhistory` if needed.
 </div>
 
