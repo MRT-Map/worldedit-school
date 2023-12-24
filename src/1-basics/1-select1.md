@@ -14,7 +14,7 @@ The default selection is cuboid, and hence requires two points on opposite sides
 
 
 This image shows p1 and p2 indicated by diamond blocks. The fire outlines the selection after selecting them.
-![](../../images/cube-select.png)
+![](../images/cube-select.png)
 
 You can select the points with the wand as shown in the section above. If a conductor is helping you, see below.
 

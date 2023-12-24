@@ -13,12 +13,12 @@ It also supports the following flags:
 * `-s` to shift the selection to the last section stacked.
 
 This image shows the result of `//stack 3 u`: 3 copies over the original copy.
-![](../../images/stack-3-up.png)
+![](../images/stack-3-up.png)
 
 This image shows the result of `//stack 3 u -s`: same as above but the selection is moved to the last/furthermost copy.
-![](../../images/stack-3-up-s.png)
+![](../images/stack-3-up-s.png)
 
 This image shows the result of `//stack 3 up -m red_wool`: only the red wool is stacked.
-![](../../images/stack-3-up-m-red-wool.png)
+![](../images/stack-3-up-m-red-wool.png)
 
 More about `//stack` is covered in TODO.
