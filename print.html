@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -13,38 +13,52 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-9dfbd86b.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
-        <!-- Provide site root to javascript -->
-        <script>
-            var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
-        </script>
 
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-2feb606c.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-88f08894.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -58,85 +72,69 @@
 
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script>
-            var theme;
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
-            var sidebar = null;
-            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="1-basics/1-select1.html"><strong aria-hidden="true">1.</strong> Selection 1 (//wand, p1/p2)</a></li><li class="chapter-item expanded "><a href="1-basics/2-set-replace.html"><strong aria-hidden="true">2.</strong> //set and //replace</a></li><li class="chapter-item expanded "><a href="1-basics/3-clipboard1.html"><strong aria-hidden="true">3.</strong> Clipboard 1 (//copy, //cut, //paste)</a></li><li class="chapter-item expanded "><a href="1-basics/4-clipboard2.html"><strong aria-hidden="true">4.</strong> Clipboard 2 (//flip, //rotate)</a></li><li class="chapter-item expanded "><a href="1-basics/5-stack.html"><strong aria-hidden="true">5.</strong> //stack</a></li><li class="chapter-item expanded "><a href="1-basics/6-fill.html"><strong aria-hidden="true">6.</strong> //fill and //fillr</a></li><li class="chapter-item expanded "><a href="1-basics/7-line-center.html"><strong aria-hidden="true">7.</strong> //line and //center</a></li><li class="chapter-item expanded "><a href="1-basics/8-move.html"><strong aria-hidden="true">8.</strong> //move</a></li><li class="chapter-item expanded "><a href="1-basics/9-undo-redo.html"><strong aria-hidden="true">9.</strong> //undo and //redo</a></li><li class="chapter-item expanded "><a href="1-basics/10-schematics.html"><strong aria-hidden="true">10.</strong> Schematics (//schem)</a></li><li class="chapter-item expanded "><a href="1-basics/11-size.html"><strong aria-hidden="true">11.</strong> //size</a></li><li class="chapter-item expanded "><a href="1-basics/12-tree.html"><strong aria-hidden="true">12.</strong> /tool tree and /tool deltree</a></li><li class="chapter-item expanded "><a href="1-basics/13-selection2.html"><strong aria-hidden="true">13.</strong> Selection 2 (//shift, //expand, //contract)</a></li><li class="chapter-item expanded "><a href="1-basics/14-quiz.html"><strong aria-hidden="true">14.</strong> Quiz</a></li><li class="chapter-item expanded "><a href="1-basics/15-conclusion.html"><strong aria-hidden="true">15.</strong> Conclusion</a></li><li class="chapter-item expanded affix "><li class="part-title">Intermediate</li><li class="chapter-item expanded "><a href="2-intermediate/masks.html"><strong aria-hidden="true">16.</strong> Masks</a></li><li class="chapter-item expanded "><a href="2-intermediate/patterns.html"><strong aria-hidden="true">17.</strong> Patterns</a></li><li class="chapter-item expanded "><a href="2-intermediate/stack.html"><strong aria-hidden="true">18.</strong> More on //stack</a></li><li class="chapter-item expanded "><a href="2-intermediate/liquids.html"><strong aria-hidden="true">19.</strong> Liquids (//drain, //fixwater, //fixlava)</a></li><li class="chapter-item expanded "><a href="2-intermediate/select.html"><strong aria-hidden="true">20.</strong> Selection Shapes</a></li><li class="chapter-item expanded "><a href="2-intermediate/snow-thaw.html"><strong aria-hidden="true">21.</strong> //snow and //thaw</a></li></ol>
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
-
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                            <i class="fa fa-search"></i>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
                         </button>
                     </div>
 
@@ -144,33 +142,38 @@
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
-                            <i id="print-button" class="fa fa-print"></i>
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
-                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
                     </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
                         </ul>
                     </div>
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="worldedit-tutorial-by-mrt-mapping-services"><a class="header" href="#worldedit-tutorial-by-mrt-mapping-services">WorldEdit Tutorial by MRT Mapping Services</a></h1>
 <p>This book provides you with information to master basic WorldEdit, as well as more advanced techniques</p>
@@ -180,11 +183,12 @@
 <p>The first part, <code>Basics</code> outlines basic operations like //stack, //set, etc. and is minimally what is required on the MRT to be Conductor.</p>
 <p>The scond part, <code>Intermediate</code> outlines more operations and tricks that are regularly used on the MRT.</p>
 <p>The third part, <code>Advanced</code> outlines operations not commonly used on the MRT and may be very useful.</p>
-<h2 id="authors-note"><a class="header" href="#authors-note">Author's Note</a></h2>
+<h2 id="authors-note"><a class="header" href="#authors-note">Author’s Note</a></h2>
 <p>Hi there, thanks for reading this book. If you would like more chapters or explanations, do not hesitate to contact us, the MRT Mapping Services.</p>
 <p>On behalf of the MRT Mapping Services, I wish you happy WorldEditing and make sure not to anger conductors or staff :))</p>
-<p>-- __7d</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="selection-1-wand-p1p2"><a class="header" href="#selection-1-wand-p1p2">Selection 1 (//wand, p1/p2)</a></h1>
+<p>– __7d</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="selection-1-wand-p1p2"><a class="header" href="#selection-1-wand-p1p2">Selection 1 (//wand, p1/p2)</a></h1>
 <p>Most WorldEdit operations require a selection in the world. One way of selecting an area is by using a wand.</p>
 <h2 id="the-wand"><a class="header" href="#the-wand">The Wand</a></h2>
 <p>If the conductor is doing the w/e for you, you can skip this section.</p>
@@ -192,7 +196,7 @@
 <h2 id="positions"><a class="header" href="#positions">Positions</a></h2>
 <p>The default selection is cuboid, and hence requires two points on opposite sides, p1 and p2.</p>
 <p>This image shows p1 and p2 indicated by diamond blocks. The fire outlines the selection after selecting them.
-<img src="1-basics/../images/cube-select.png" alt="" /></p>
+<img src="images/cube-select.png" alt=""></p>
 <p>You can select the points with the wand as shown in the section above. If a conductor is helping you, see below.</p>
 <div class="warning">
 If a conductor is helping you, you should
@@ -200,46 +204,51 @@ If a conductor is helping you, you should
 <li>Mark p1 and p2 with clear blocks, eg. diamond in a white build</li>
 <li>Show the conductor where the points are
 <ul>
-<li>Stand next to the points and say "p1" or "p2"</li>
-<li>if they're near, you can also say the material, eg. "points on diamond"</li>
+<li>Stand next to the points and say “p1” or “p2”</li>
+<li>if they’re near, you can also say the material, eg. “points on diamond”</li>
 </ul>
 </li>
-<li>Tell the conductor the operation(s) to run, eg. "set stone"</li>
+<li>Tell the conductor the operation(s) to run, eg. “set stone”</li>
 </ul>
 </div>
-<p>More selection types and methods are covered <a href="1-basics/../2-intermediate/select.html">here</a>.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="set-and-replace"><a class="header" href="#set-and-replace">//set and //replace</a></h1>
+
+<p>More selection types and methods are covered <a href="#selection-shapes-sel">here</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="set-and-replace"><a class="header" href="#set-and-replace">//set and //replace</a></h1>
 <p><code>//set</code> is equivalent to vanilla /fill. It sets all the blocks in the selection with the specified block(s).</p>
 <p>The syntax is <code>//set &lt;pattern&gt;</code>, for example <code>//set stone</code>.</p>
-<p><img src="1-basics/../images/set-stone.png" alt="" /></p>
+<p><img src="images/set-stone.png" alt=""></p>
 <p>Note that you can specify multiple blocks, separated by commas <strong>without spaces</strong>: this yields an equal distribution of blocks. For example, <code>//set stone,andesite</code></p>
-<p><img src="1-basics/../images/set-stone,andesite.png" alt="" /></p>
+<p><img src="images/set-stone,andesite.png" alt=""></p>
 <p>If there is additional block data, you can append [key=value] to the block ID. For example, <code>stone_slab[type=top]</code></p>
-<p><img src="1-basics/../images/set-stone-slab-top.png" alt="" /></p>
+<p><img src="images/set-stone-slab-top.png" alt=""></p>
 <p><code>//replace</code> is similar to <code>//set</code>, but in this case it replaces specific blocks instead of every block in the selection.</p>
 <p>The syntax is <code>//replace &lt;mask&gt; &lt;pattern&gt;</code>, for example <code>//replace air stone</code>.</p>
-<p><img src="1-basics/../images/re-air-stone.png" alt="" /></p>
+<p><img src="images/re-air-stone.png" alt=""></p>
 <p>Multiple blocks are also possible for both mask and pattern, for example <code>//replace air,red_wool stone,andesite</code>.</p>
-<p><img src="1-basics/../images/re-air-red-wool-stone-andesite.png" alt="" /></p>
+<p><img src="images/re-air-red-wool-stone-andesite.png" alt=""></p>
 <p>For the query, you can also select all blocks except certain blocks by prepending <code>!</code>. For example, <code>!air</code> or <code>!air,red_wool</code>.</p>
-<p><img src="1-basics/../images/re-not-red-wool,air-stone,andesite.png" alt="" /></p>
+<p><img src="images/re-not-red-wool,air-stone,andesite.png" alt=""></p>
 <div class="warning">
     Be careful with falling blocks! Undoing blocks that have fallen is difficult.
 </div>
-<p>More about block masks and patterns is covered <a href="1-basics/../2-intermediate/masks.html">here</a> and <a href="1-basics/../2-intermediate/patterns.html">here</a>.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="clipboard-1-copy-cut-paste"><a class="header" href="#clipboard-1-copy-cut-paste">Clipboard 1 (//copy, //cut, //paste)</a></h1>
+
+<p>More about block masks and patterns is covered <a href="#block-masks">here</a> and <a href="#patterns">here</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="clipboard-1-copy-cut-paste"><a class="header" href="#clipboard-1-copy-cut-paste">Clipboard 1 (//copy, //cut, //paste)</a></h1>
 <p>This is one of the harder topics to explain, but with some intuition it will make sense.</p>
 <p><code>//copy</code> is like <code>Ctrl+C</code>: copies the current selection to the clipboard. <code>//cut</code> is like <code>Ctrl+X</code>: same as <code>//copy</code>, but replaces the blocks in the selection with air (by default). <code>//paste</code> is like <code>Ctrl+V</code> and simply pastes the contents of the clipboard.</p>
-<p>The clipboard is <strong>relative to the player's position when it was copied or cut</strong>. For example, if you were to copy a selection, stand two blocks in front of it and copy, when you paste the clipboard, it would be two blocks behind you.</p>
+<p>The clipboard is <strong>relative to the player’s position when it was copied or cut</strong>. For example, if you were to copy a selection, stand two blocks in front of it and copy, when you paste the clipboard, it would be two blocks behind you.</p>
 <p>In the image below, the gold is the copy point and the emerald are the paste points. Note how the copies are at the same position relative to the emerald, as that of the original copy relative to the gold.
-<img src="1-basics/../images/copy-paste.png" alt="" /></p>
+<img src="images/copy-paste.png" alt=""></p>
 <div class="warning">
 If a conductor is doing a w/e for you, remember to specify copy/cut/paste points. You should
 <ul>
-<li>mark a copy point with a visible material (preferably different fron that of points), stand next to it and say "copy on (block)" or "copy here"</li>
-<li>copying from a point is also possible, for example "copy on p2"</li>
+<li>mark a copy point with a visible material (preferably different fron that of points), stand next to it and say “copy on (block)” or “copy here”</li>
+<li>copying from a point is also possible, for example “copy on p2”</li>
 </ul>
 </div>
+
 <p><code>//copy</code> has two flags (options):</p>
 <ul>
 <li><code>-e</code> to copy entities to the clipboard.</li>
@@ -247,11 +256,12 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 </ul>
 <p>You can also have multiple options: <code>//copy -e -m &lt;mask&gt;</code> or <code>//copy -em &lt;mask&gt;</code> since <code>-e</code> does not take further arguments.</p>
 <p><code>//cut</code> has the same flags as <code>//copy</code>, together with one additional optional argument <code>[fill]</code> which sets the selection to the block(s) specified instead of air after copying. For example, <code>//cut stone</code> replaces the selection with stone after cutting.
-<img src="1-basics/../images/cut-stone.png" alt="" /></p>
+<img src="images/cut-stone.png" alt=""></p>
 <div class="warning">
 <p>Clipboards may unintentionally be cleared, so if you need a backup of something you intend to <code>//cut</code>, please consider copying instead, or having a backup somewhere.</p>
 <p>There has been one case where someone lost an entire airplane due to this</p>
 </div>
+
 <p><code>//paste</code> has a few flags:</p>
 <ul>
 <li><code>-e</code> to paste entities in the clipboard.</li>
@@ -259,22 +269,24 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 <li><code>-m &lt;mask&gt;</code> to only paste specific blocks in the clipboard.</li>
 <li><code>-s</code> to move the current selection to the region that has been pasted.</li>
 </ul>
-<p>In this image, the top sunken cube was <code>//copy</code>'d, and then pasted with <code>-a</code> and you can see the sandstone in the middle of the cube showing that it did not get replaced by the air in the clipboard. The bottom sunken cube was not pasted with <code>-a</code> thus there is air in the cube instead of sandstone.
-<img src="1-basics/../images/copy-paste-a.png" alt="" /></p>
+<p>In this image, the top sunken cube was <code>//copy</code>’d, and then pasted with <code>-a</code> and you can see the sandstone in the middle of the cube showing that it did not get replaced by the air in the clipboard. The bottom sunken cube was not pasted with <code>-a</code> thus there is air in the cube instead of sandstone.
+<img src="images/copy-paste-a.png" alt=""></p>
 <p>In this image, <code>//paste -m red_wool</code> was used. This can also be achieved with <code>//copy -m red_wool</code> and then <code>//paste</code>:
-<img src="1-basics/../images/copy-m-red-wool.png" alt="" /></p>
+<img src="images/copy-m-red-wool.png" alt=""></p>
 <p>Note that if you want to paste entities, you must <code>//copy</code> <strong>and</strong> <code>//paste</code> with the <code>-e</code> flag.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="clipboard-2-rotate-flip"><a class="header" href="#clipboard-2-rotate-flip">Clipboard 2 (//rotate, //flip)</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="clipboard-2-rotate-flip"><a class="header" href="#clipboard-2-rotate-flip">Clipboard 2 (//rotate, //flip)</a></h1>
 <p>After copying to the clipboard, its contents can be rotated or flipped.</p>
 <p><code>//rotate</code> does rotation. Specify the angle to rotate in degrees (it can also be negative). For example, <code>//rotate 90</code> or <code>//rotate -90</code>. Note that angles that are not multiples of 90 are not recommended as they may leave holes in the contents.</p>
 <p>In this image, the top-left is the original cube and is also the result of pasting after a <code>//rotate 0</code>. From top-left clockwise, the copies are the result of: <code>//rotate 90</code>, <code>//rotate 180</code>/<code>-180</code>, <code>//rotate -90</code>
-<img src="1-basics/../images/rotate-paste.png" alt="" /></p>
+<img src="images/rotate-paste.png" alt=""></p>
 <p><code>//flip</code> does flipping. Specify the direction to flip to (n/s/e/w/u/d/ne/nw/se/sw). For example, <code>//flip n</code> to flip it in the north-south direction.</p>
 <p>In this image, the center is the original cube, and north is to the top-right. The left cube is a result of <code>//flip n</code>/<code>s</code>, and the right <code>//flip e</code>/<code>w</code>.
-<img src="1-basics/../images/flip-paste.png" alt="" /></p>
-<p>Note that these are done relative to the player's point when the contents are copied to the clipboard.</p>
+<img src="images/flip-paste.png" alt=""></p>
+<p>Note that these are done relative to the player’s point when the contents are copied to the clipboard.</p>
 <p>Both of these by default rotate and flip along the horizontal plane. Rotating and flipping along the vertical plane is covered in TODO.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="stack"><a class="header" href="#stack">//stack</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="stack"><a class="header" href="#stack">//stack</a></h1>
 <p><code>//stack</code> stacks the selection in a particular direction, and is essentially the faster way of pasting a section individually.</p>
 <p>It is also your favourite command, good luck with Mojangitis lol</p>
 <p>You need to give it the number of times to stack, and the direction to stack. For example, <code>//stack 5 u</code> stacks the selection upwards 5 times.</p>
@@ -286,35 +298,38 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 <li><code>-s</code> to shift the selection to the last section stacked.</li>
 </ul>
 <p>This image shows the result of <code>//stack 3 u</code>: 3 copies over the original copy.
-<img src="1-basics/../images/stack-3-up.png" alt="" /></p>
+<img src="images/stack-3-up.png" alt=""></p>
 <p>This image shows the result of <code>//stack 3 u -s</code>: same as above but the selection is moved to the last/furthermost copy.
-<img src="1-basics/../images/stack-3-up-s.png" alt="" /></p>
+<img src="images/stack-3-up-s.png" alt=""></p>
 <p>This image shows the result of <code>//stack 3 up -m red_wool</code>: only the red wool is stacked.
-<img src="1-basics/../images/stack-3-up-m-red-wool.png" alt="" /></p>
+<img src="images/stack-3-up-m-red-wool.png" alt=""></p>
 <p>More about <code>//stack</code> is covered in TODO.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="fill-and-fillr"><a class="header" href="#fill-and-fillr">//fill and //fillr</a></h1>
-<p>Both fill a hole or depression, and do not need a selection. They consider all the air around and under the player's feet and fills it with the specified block(s).</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="fill-and-fillr"><a class="header" href="#fill-and-fillr">//fill and //fillr</a></h1>
+<p>Both fill a hole or depression, and do not need a selection. They consider all the air around and under the player’s feet and fills it with the specified block(s).</p>
 <p>For example, if I were to be standing on the side of a valley, <code>//fill stone 10</code> would cover the valley with stone within 10 blocks of the player, but below the stone is air.
-<img src="1-basics/../images/fill-stone-10.png" alt="" /></p>
-<p>An extra number, like in <code>//fill stone 15 6</code> would fill for the Y-levels between that of the player's feet and 6-1=5 blocks below that.
-<img src="1-basics/../images/fill-stone-15-6.png" alt="" /></p>
+<img src="images/fill-stone-10.png" alt=""></p>
+<p>An extra number, like in <code>//fill stone 15 6</code> would fill for the Y-levels between that of the player’s feet and 6-1=5 blocks below that.
+<img src="images/fill-stone-15-6.png" alt=""></p>
 <p>The difference between <code>//fill</code> and <code>//fillr</code> is shown below: it fills any air pockets below the top Y-level.</p>
 <p>For example, these show <code>//fillr stone 10 6</code> and <code>//fillr stone 15 6</code> respectively:
-<img src="1-basics/../images/fillr-stone-10-6.png" alt="" />
-<img src="1-basics/../images/fillr-stone-15-6.png" alt="" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="line-and-center"><a class="header" href="#line-and-center">//line and //center</a></h1>
+<img src="images/fillr-stone-10-6.png" alt="">
+<img src="images/fillr-stone-15-6.png" alt=""></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="line-and-center"><a class="header" href="#line-and-center">//line and //center</a></h1>
 <p>These are the p1 and p2 that we will be using:
-<img src="1-basics/../images/line-center-prep.png" alt="" /></p>
+<img src="images/line-center-prep.png" alt=""></p>
 <p><code>//line</code> draws a line of blocks between p1 and p2. For example, <code>//line stone,andesite</code> draws a line of stone and andesite.
-<img src="1-basics/../images/line.png" alt="" /></p>
+<img src="images/line.png" alt=""></p>
 <p><code>//center</code> sets 1-8 blocks at the midpoint of p1 and p2. For example, <code>//center stone</code> sets the midpoint to stone.
-<img src="1-basics/../images/center.png" alt="" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="move"><a class="header" href="#move">//move</a></h1>
+<img src="images/center.png" alt=""></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="move"><a class="header" href="#move">//move</a></h1>
 <p>This moves the selection to a direction, given the number of blocks to move and a direction.</p>
 <p>For example, <code>//move 5 w</code> moves the blocks in the selection 5 blocks to the west.
-<img src="1-basics/../images/move-5-w.png" alt="" /></p>
+<img src="images/move-5-w.png" alt=""></p>
 <p><strong>Note that the selection by itself does not move along with the blocks, use <code>-s</code> to also move the selection.</strong>
-<img src="1-basics/../images/move-5-w-s.png" alt="" /></p>
+<img src="images/move-5-w-s.png" alt=""></p>
 <p>It accepts the following flags:</p>
 <ul>
 <li><code>-a</code> to prevent air from being moved along with the contents.</li>
@@ -323,50 +338,58 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 <li><code>-s</code> to also move the selection along with the blocks.</li>
 </ul>
 <p>This image shows the result of <code>//move 5 w -m red_wool</code>.
-<img src="1-basics/../images/move-5-w-m-red-wool.png" alt="" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="undo-and-redo"><a class="header" href="#undo-and-redo">//undo and //redo</a></h1>
+<img src="images/move-5-w-m-red-wool.png" alt=""></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="undo-and-redo"><a class="header" href="#undo-and-redo">//undo and //redo</a></h1>
 <p>Similar to <code>Ctrl+Z</code> and <code>Ctrl+Y</code>/<code>Ctrl+Shift+Z</code>, //undo and //redo can undo and redo operations.</p>
 <p>It optionally accepts a number representing the number of operations to undo or redo. For example, <code>//undo 5</code> undoes 5 operations.</p>
 <p>Note that there is usually a limit on the number of operations that you can undo or redo.</p>
 <div class="warning">
-<p>Be careful not to accidentally undo operations in another place that you wouldn't notice immediately! Clear your history with <code>//clearhistory</code> if needed.</p>
+<p>Be careful not to accidentally undo operations in another place that you wouldn’t notice immediately! Clear your history with <code>//clearhistory</code> if needed.</p>
 </div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="schematics-schem"><a class="header" href="#schematics-schem">Schematics (//schem)</a></h1>
+
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="schematics-schem"><a class="header" href="#schematics-schem">Schematics (//schem)</a></h1>
 <p>Schematics let you import and save structures to and from your <strong>clipboard</strong>.</p>
 <p>Schematic files have an extention <code>.schem</code> and are put in the plugin folder. On the MRT, schematic files can be uploaded and downloaded on the file server.</p>
 <p>To load a schematic into the clipboard, do <code>//schem load &lt;file&gt;</code>. <code>&lt;file&gt;</code> is case-sensitive and does not need the <code>.schem</code> extension. For example, <code>//schem load 7d-house</code> loads <code>7d-house.schem</code> to the clipboard. The clipboard can then be pasted as usual.</p>
 <p>To save a schematic from the clipboard, do <code>//schem save &lt;file&gt;</code>. For example, after copying my house, I can do <code>//schem save 7d-house</code> and it saves to <code>7d-house.schem</code>.</p>
 <p>However, if <code>7d-house</code> already exists, it would not save unless I overwrite it with the <code>-f</code> flag. For example, <code>//schem save 7d-house -f</code>. <strong>Note that the old schematic is lost.</strong></p>
 <p>On the MRT server, schematics can be uploaded and downloaded on the <a href="https://files.minecartrapidtransit.net">file server</a>.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="size"><a class="header" href="#size">//size</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="size"><a class="header" href="#size">//size</a></h1>
 <p><code>//size</code>, among other things, prints information about the selection. <strong>This can be done without a conductor.</strong></p>
 <p>Among other things, it prints useful information like distance between points and the area of your selection.</p>
 <p>Useful applications include measuring the distance between places and dividing a structure into parts to fit under the operation limit of WorldEdit.
-<img src="1-basics/../images/size.png" alt="" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="tool-tree-and-tool-deltree"><a class="header" href="#tool-tree-and-tool-deltree">/tool tree and /tool deltree</a></h1>
+<img src="images/size.png" alt=""></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="tool-tree-and-tool-deltree"><a class="header" href="#tool-tree-and-tool-deltree">/tool tree and /tool deltree</a></h1>
 <p><code>/tool tree</code>, or <code>/tree</code> lets you plant trees without using saplings. <strong>It can be done without a conductor and a selection.</strong></p>
 <p>First hold a non-placeable item and run <code>/tool tree &lt;name&gt;</code>, for example <code>/tool tree oak</code>. Then right-click somewhere to plant.</p>
 <div class="warning">
     Two trees may be placed; in this case you can run //undo once.
 </div>
+
 <p><code>/tool deltree</code>, or <code>/deltree</code> removes <strong>floating</strong> trees. After binding it to an item, right-click a floating tree to remove it. You can make a tree floating by removing the bottom-most log block and removing leaves that touch other structures.</p>
 <p>To remove the tooling from an item, do <code>/tool unbind</code>.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="selection-2-shift-expand-contract-inset-outset"><a class="header" href="#selection-2-shift-expand-contract-inset-outset">Selection 2 (//shift, //expand, //contract, //inset, //outset)</a></h1>
-<p>This isn't really considered basic, but I added it here because it is a massive time-saver.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="selection-2-shift-expand-contract-inset-outset"><a class="header" href="#selection-2-shift-expand-contract-inset-outset">Selection 2 (//shift, //expand, //contract, //inset, //outset)</a></h1>
+<p>This isn’t really considered basic, but I added it here because it is a massive time-saver.</p>
 <p><code>//shift</code> shifts the selection a certain number of blocks in a direction. It is similar to <code>//move</code> but the selection is moved instead of the contents. For example, <code>//shift 5 w</code> moves the selection 5 blocks to the west.
-<img src="1-basics/../images/shift-5-w.png" alt="" /></p>
+<img src="images/shift-5-w.png" alt=""></p>
 <p><code>//expand</code> expands the selection a certain number of blocks towards a direction. For example, <code>//expand 4 u</code> expands the selection 4 blocks upward.
-<img src="1-basics/../images/expand-4-u.png" alt="" /></p>
+<img src="images/expand-4-u.png" alt=""></p>
 <p><code>//contract</code> contracts the selection instead. Think of it as pushing the selection back a certain number of blocks from a direction. For example, <code>//contract 2 d</code> renoves 2 layers from the top of the selection.
-<img src="1-basics/../images/contract-2-d.png" alt="" /></p>
+<img src="images/contract-2-d.png" alt=""></p>
 <p><code>//outset</code> and <code>//inset</code> are kind of like shortcuts for doing multiple <code>//expand</code>s and <code>//contract</code>s respectively. <code>//outset</code> expands the selection in all 6 directions, eg. <code>//outset 2</code>:
-<img src="1-basics/../images/outset-2.png" alt="" /></p>
+<img src="images/outset-2.png" alt=""></p>
 <p>It can also expand in only horizontal or vertical directions with the <code>-h</code> and <code>-v</code> flag respectively, eg. <code>//outset -h 2</code> and <code>//outset -v 2</code>:
-<img src="1-basics/../images/outset-h-2.png" alt="" />
-<img src="1-basics/../images/outset-v-2.png" alt="" /></p>
+<img src="images/outset-h-2.png" alt="">
+<img src="images/outset-v-2.png" alt=""></p>
 <p><code>//inset</code> is the reverse and contracts the selection instead, with the same flags.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="quiz"><a class="header" href="#quiz">Quiz</a></h1>
-<p>I don't know if this is a good idea but I decided to do something to cover tips and tricks</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="quiz"><a class="header" href="#quiz">Quiz</a></h1>
+<p>I don’t know if this is a good idea but I decided to do something to cover tips and tricks</p>
 <h1 id="questions"><a class="header" href="#questions">Questions</a></h1>
 <ol>
 <li>You have the first floor of a building built and selected. You want 10 floors. What is the command?</li>
@@ -386,13 +409,15 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 <ol start="3">
 <li>(-1,1,-1)</li>
 </ol>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h1>
 <p>Congratulations, you have finished WorldEdit school!</p>
 <p>If you have any questions about WorldEdit, feel free to ask conductors, staff or anyone experienced in WorldEdit.</p>
 <p>If you think some parts in this tutorial are unclear or you think something is basic enough for this section, feel free to let MRT Mapping Services know.</p>
-<p>Otherwise happy WorldEditing and don't upset the conductors and staff :)
-<img src="1-basics/../images/beginner-finale.png" alt="" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="block-masks"><a class="header" href="#block-masks">Block Masks</a></h1>
+<p>Otherwise happy WorldEditing and don’t upset the conductors and staff :)
+<img src="images/beginner-finale.png" alt=""></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="block-masks"><a class="header" href="#block-masks">Block Masks</a></h1>
 <p>Masks are used to select specific blocks from a selection or region. It is used in commands like <code>//replace</code> and flags like <code>-m</code>.</p>
 <h1 id="or-and-and"><a class="header" href="#or-and-and">Or and And</a></h1>
 <p>Remember that multiple blocks can be combined with a comma. For example, <code>stone,andesite</code> matches either stone or andesite.</p>
@@ -400,7 +425,8 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 <p>For example, <code>"stone &gt;water"</code> means <code>stone AND &gt;water</code>. Note that OR gets precedence over AND, so <code>stone,andesite &gt;water</code> is <code>(stone OR andesite) AND &gt;water</code>.</p>
 <h1 id="under-and-over"><a class="header" href="#under-and-over">Under and Over</a></h1>
 <p>To select a block that is under or over (a) specific block(s), prepend <code>&lt;</code> and <code>&gt;</code> respectively before the block ID(s). For example, <code>&gt;stone</code> selects all blocks above stone.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="patterns"><a class="header" href="#patterns">Patterns</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="patterns"><a class="header" href="#patterns">Patterns</a></h1>
 <p>Patterns specify the blocks that operations set or draw in the world. For example, it is used in <code>//set</code>, <code>//line</code>, etc.</p>
 <h2 id="changing-distribution"><a class="header" href="#changing-distribution">Changing Distribution</a></h2>
 <p>From <code>Basics</code> you have known that one or more blocks can be specified to yield an equal distribution: <code>stone</code> yields 100% stone, and <code>stone,andesite</code> yields 50% andesite and 50% stone, or 1 part andesite and 1 part stone.</p>
@@ -411,17 +437,20 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 <p>For example, if I have brick stairs facing a particular direction, <code>//replace brick_stairs ^oak_stairs</code> retains the position of the stairs while replacing brick with oak.</p>
 <h2 id="block-categories"><a class="header" href="#block-categories">Block Categories</a></h2>
 <p>You can also use a block category to yield an equal distribution of blocks in the category. For example, <code>//set ##wool</code> yields all 16 colours of wool.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="more-on-stack"><a class="header" href="#more-on-stack">More on //stack</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="more-on-stack"><a class="header" href="#more-on-stack">More on //stack</a></h1>
 <p><code>//stack</code> can actually stack diagonally, saving time instead of manually copy-pasting on a diagonal.</p>
 <p><code>//stack n x,y,z</code> stacks a selection <em>n</em> times with an imterval of <em>x,y,z</em> between each copy. Each variable in <em>x,y,z</em> represents length in terms of the width, height or breadth of the selection.</p>
 <p>For example, if I have a 2x1x2 block and I want 10 more of them to the east, with them being 4 blocks apart, I can do <code>//stack 10 3,0,0</code>, as shown below. Think of it as counting imaginary tiling of the same dimensions as the selection, and then pasting it after counting.</p>
 <p>If I want the interal <em>x,y,z</em> to be in terms of <em>blocks</em> instead, add the <code>-r</code> flag.</p>
 <p>For example, if I want a road going east to shift left 5 times every 10 blocks and I have 10m of road selected, I do <code>//stack 5 10,0,-1</code>. Think of it as offsetting the next copy by <em>x,y,z</em> from the selecrion or previous copy</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="liquids-drain-fixwater-fixlava"><a class="header" href="#liquids-drain-fixwater-fixlava">Liquids (//drain, //fixwater, //fixlava)</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="liquids-drain-fixwater-fixlava"><a class="header" href="#liquids-drain-fixwater-fixlava">Liquids (//drain, //fixwater, //fixlava)</a></h1>
 <p>These are some commands useful for dealing with water and lava.</p>
 <p><code>//drain</code> removes water and lava within a radius. For example, <code>//drain 50</code> removes all water and lava within 50 blocks of the player. Adding <code>-w</code> also removes the waterlog from blocks.</p>
 <p><code>//fixwater</code> and <code>//fixlava</code> replace flowing water or lava with their still versions within a radius. For example, <code>//fixwater 50</code> fixes water within 50 blocks of the player.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="selection-shapes-sel"><a class="header" href="#selection-shapes-sel">Selection Shapes (//sel)</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="selection-shapes-sel"><a class="header" href="#selection-shapes-sel">Selection Shapes (//sel)</a></h1>
 <p>Below are a list of selection shapes that are often used on the MRT. More selections are outlined in TODO.</p>
 <h2 id="sel-cuboid"><a class="header" href="#sel-cuboid">//sel cuboid</a></h2>
 <p>The default selection. p1 and p2 are the opposite corners of the cuboid.</p>
@@ -432,7 +461,8 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 <h2 id="sel-convex"><a class="header" href="#sel-convex">//sel convex</a></h2>
 <p>Uses multiple points. Each point is the edge of a <em>polyhedron</em>.</p>
 <p>For a wand, this is similar to <code>//sel poly</code></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="snow-and-thaw"><a class="header" href="#snow-and-thaw">//snow and //thaw</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="snow-and-thaw"><a class="header" href="#snow-and-thaw">//snow and //thaw</a></h1>
 <p><code>//snow</code> covers a region within a radius around the player with snow layers. It also coverts water into ice. For example, <code>//snow 50</code> does so within 50 blocks of the player.</p>
 <p><code>//thaw</code> does the opposite as it removes snow layers and converts ice back to water.</p>
 
@@ -453,6 +483,11 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -461,13 +496,13 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
 
         <!-- Custom JS scripts -->
 
@@ -476,6 +511,7 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
             window.setTimeout(window.print, 100);
         });
         </script>
+
 
     </div>
     </body>
