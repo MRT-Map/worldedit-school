@@ -15,8 +15,8 @@
         <link rel="icon" href="../favicon-de23e50b.svg">
         <link rel="shortcut icon" href="../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-0392ca55.css">
-        <link rel="stylesheet" href="../css/chrome-fc474251.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
         <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -179,7 +179,7 @@
 <p><code>//copy</code> is like <code>Ctrl+C</code>: copies the current selection to the clipboard. <code>//cut</code> is like <code>Ctrl+X</code>: same as <code>//copy</code>, but replaces the blocks in the selection with air (by default). <code>//paste</code> is like <code>Ctrl+V</code> and simply pastes the contents of the clipboard.</p>
 <p>The clipboard is <strong>relative to the player’s position when it was copied or cut</strong>. For example, if you were to copy a selection, stand two blocks in front of it and copy, when you paste the clipboard, it would be two blocks behind you.</p>
 <p>In the image below, the gold is the copy point and the emerald are the paste points. Note how the copies are at the same position relative to the emerald, as that of the original copy relative to the gold.
-<img src="../images/copy-paste.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="../images/copy-paste.png" alt=""><span class="img-wrapper"><img src="../images/copy-paste.png" alt=""></span></label></p>
 <div class="warning">
 If a conductor is doing a w/e for you, remember to specify copy/cut/paste points. You should
 <ul>
@@ -195,7 +195,7 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 </ul>
 <p>You can also have multiple options: <code>//copy -e -m &lt;mask&gt;</code> or <code>//copy -em &lt;mask&gt;</code> since <code>-e</code> does not take further arguments.</p>
 <p><code>//cut</code> has the same flags as <code>//copy</code>, together with one additional optional argument <code>[fill]</code> which sets the selection to the block(s) specified instead of air after copying. For example, <code>//cut stone</code> replaces the selection with stone after cutting.
-<img src="../images/cut-stone.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="../images/cut-stone.png" alt=""><span class="img-wrapper"><img src="../images/cut-stone.png" alt=""></span></label></p>
 <div class="warning">
 <p>Clipboards may unintentionally be cleared, so if you need a backup of something you intend to <code>//cut</code>, please consider copying instead, or having a backup somewhere.</p>
 <p>There has been one case where someone lost an entire airplane due to this</p>
@@ -209,9 +209,9 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 <li><code>-s</code> to move the current selection to the region that has been pasted.</li>
 </ul>
 <p>In this image, the top sunken cube was <code>//copy</code>’d, and then pasted with <code>-a</code> and you can see the sandstone in the middle of the cube showing that it did not get replaced by the air in the clipboard. The bottom sunken cube was not pasted with <code>-a</code> thus there is air in the cube instead of sandstone.
-<img src="../images/copy-paste-a.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="../images/copy-paste-a.png" alt=""><span class="img-wrapper"><img src="../images/copy-paste-a.png" alt=""></span></label></p>
 <p>In this image, <code>//paste -m red_wool</code> was used. This can also be achieved with <code>//copy -m red_wool</code> and then <code>//paste</code>:
-<img src="../images/copy-m-red-wool.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="../images/copy-m-red-wool.png" alt=""><span class="img-wrapper"><img src="../images/copy-m-red-wool.png" alt=""></span></label></p>
 <p>Note that if you want to paste entities, you must <code>//copy</code> <strong>and</strong> <code>//paste</code> with the <code>-e</code> flag.</p>
 
                     </main>
@@ -262,7 +262,7 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 
         <script src="../clipboard-1626706a.min.js"></script>
         <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-c22b7243.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
 

@@ -16,8 +16,8 @@
         <link rel="icon" href="favicon-de23e50b.svg">
         <link rel="shortcut icon" href="favicon-8114d1fc.png">
         <link rel="stylesheet" href="css/variables-8adf115d.css">
-        <link rel="stylesheet" href="css/general-0392ca55.css">
-        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/general-e96d0476.css">
+        <link rel="stylesheet" href="css/chrome-d279d366.css">
         <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -196,7 +196,7 @@
 <h2 id="positions"><a class="header" href="#positions">Positions</a></h2>
 <p>The default selection is cuboid, and hence requires two points on opposite sides, p1 and p2.</p>
 <p>This image shows p1 and p2 indicated by diamond blocks. The fire outlines the selection after selecting them.
-<img src="images/cube-select.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/cube-select.png" alt=""><span class="img-wrapper"><img src="images/cube-select.png" alt=""></span></label></p>
 <p>You can select the points with the wand as shown in the section above. If a conductor is helping you, see below.</p>
 <div class="warning">
 If a conductor is helping you, you should
@@ -217,18 +217,18 @@ If a conductor is helping you, you should
 <h1 id="set-and-replace"><a class="header" href="#set-and-replace">//set and //replace</a></h1>
 <p><code>//set</code> is equivalent to vanilla /fill. It sets all the blocks in the selection with the specified block(s).</p>
 <p>The syntax is <code>//set &lt;pattern&gt;</code>, for example <code>//set stone</code>.</p>
-<p><img src="images/set-stone.png" alt=""></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/set-stone.png" alt=""><span class="img-wrapper"><img src="images/set-stone.png" alt=""></span></label></p>
 <p>Note that you can specify multiple blocks, separated by commas <strong>without spaces</strong>: this yields an equal distribution of blocks. For example, <code>//set stone,andesite</code></p>
-<p><img src="images/set-stone,andesite.png" alt=""></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/set-stone,andesite.png" alt=""><span class="img-wrapper"><img src="images/set-stone,andesite.png" alt=""></span></label></p>
 <p>If there is additional block data, you can append [key=value] to the block ID. For example, <code>stone_slab[type=top]</code></p>
-<p><img src="images/set-stone-slab-top.png" alt=""></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/set-stone-slab-top.png" alt=""><span class="img-wrapper"><img src="images/set-stone-slab-top.png" alt=""></span></label></p>
 <p><code>//replace</code> is similar to <code>//set</code>, but in this case it replaces specific blocks instead of every block in the selection.</p>
 <p>The syntax is <code>//replace &lt;mask&gt; &lt;pattern&gt;</code>, for example <code>//replace air stone</code>.</p>
-<p><img src="images/re-air-stone.png" alt=""></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/re-air-stone.png" alt=""><span class="img-wrapper"><img src="images/re-air-stone.png" alt=""></span></label></p>
 <p>Multiple blocks are also possible for both mask and pattern, for example <code>//replace air,red_wool stone,andesite</code>.</p>
-<p><img src="images/re-air-red-wool-stone-andesite.png" alt=""></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/re-air-red-wool-stone-andesite.png" alt=""><span class="img-wrapper"><img src="images/re-air-red-wool-stone-andesite.png" alt=""></span></label></p>
 <p>For the query, you can also select all blocks except certain blocks by prepending <code>!</code>. For example, <code>!air</code> or <code>!air,red_wool</code>.</p>
-<p><img src="images/re-not-red-wool,air-stone,andesite.png" alt=""></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/re-not-red-wool,air-stone,andesite.png" alt=""><span class="img-wrapper"><img src="images/re-not-red-wool,air-stone,andesite.png" alt=""></span></label></p>
 <div class="warning">
     Be careful with falling blocks! Undoing blocks that have fallen is difficult.
 </div>
@@ -240,7 +240,7 @@ If a conductor is helping you, you should
 <p><code>//copy</code> is like <code>Ctrl+C</code>: copies the current selection to the clipboard. <code>//cut</code> is like <code>Ctrl+X</code>: same as <code>//copy</code>, but replaces the blocks in the selection with air (by default). <code>//paste</code> is like <code>Ctrl+V</code> and simply pastes the contents of the clipboard.</p>
 <p>The clipboard is <strong>relative to the player’s position when it was copied or cut</strong>. For example, if you were to copy a selection, stand two blocks in front of it and copy, when you paste the clipboard, it would be two blocks behind you.</p>
 <p>In the image below, the gold is the copy point and the emerald are the paste points. Note how the copies are at the same position relative to the emerald, as that of the original copy relative to the gold.
-<img src="images/copy-paste.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/copy-paste.png" alt=""><span class="img-wrapper"><img src="images/copy-paste.png" alt=""></span></label></p>
 <div class="warning">
 If a conductor is doing a w/e for you, remember to specify copy/cut/paste points. You should
 <ul>
@@ -256,7 +256,7 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 </ul>
 <p>You can also have multiple options: <code>//copy -e -m &lt;mask&gt;</code> or <code>//copy -em &lt;mask&gt;</code> since <code>-e</code> does not take further arguments.</p>
 <p><code>//cut</code> has the same flags as <code>//copy</code>, together with one additional optional argument <code>[fill]</code> which sets the selection to the block(s) specified instead of air after copying. For example, <code>//cut stone</code> replaces the selection with stone after cutting.
-<img src="images/cut-stone.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/cut-stone.png" alt=""><span class="img-wrapper"><img src="images/cut-stone.png" alt=""></span></label></p>
 <div class="warning">
 <p>Clipboards may unintentionally be cleared, so if you need a backup of something you intend to <code>//cut</code>, please consider copying instead, or having a backup somewhere.</p>
 <p>There has been one case where someone lost an entire airplane due to this</p>
@@ -270,19 +270,19 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 <li><code>-s</code> to move the current selection to the region that has been pasted.</li>
 </ul>
 <p>In this image, the top sunken cube was <code>//copy</code>’d, and then pasted with <code>-a</code> and you can see the sandstone in the middle of the cube showing that it did not get replaced by the air in the clipboard. The bottom sunken cube was not pasted with <code>-a</code> thus there is air in the cube instead of sandstone.
-<img src="images/copy-paste-a.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/copy-paste-a.png" alt=""><span class="img-wrapper"><img src="images/copy-paste-a.png" alt=""></span></label></p>
 <p>In this image, <code>//paste -m red_wool</code> was used. This can also be achieved with <code>//copy -m red_wool</code> and then <code>//paste</code>:
-<img src="images/copy-m-red-wool.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/copy-m-red-wool.png" alt=""><span class="img-wrapper"><img src="images/copy-m-red-wool.png" alt=""></span></label></p>
 <p>Note that if you want to paste entities, you must <code>//copy</code> <strong>and</strong> <code>//paste</code> with the <code>-e</code> flag.</p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="clipboard-2-rotate-flip"><a class="header" href="#clipboard-2-rotate-flip">Clipboard 2 (//rotate, //flip)</a></h1>
 <p>After copying to the clipboard, its contents can be rotated or flipped.</p>
 <p><code>//rotate</code> does rotation. Specify the angle to rotate in degrees (it can also be negative). For example, <code>//rotate 90</code> or <code>//rotate -90</code>. Note that angles that are not multiples of 90 are not recommended as they may leave holes in the contents.</p>
 <p>In this image, the top-left is the original cube and is also the result of pasting after a <code>//rotate 0</code>. From top-left clockwise, the copies are the result of: <code>//rotate 90</code>, <code>//rotate 180</code>/<code>-180</code>, <code>//rotate -90</code>
-<img src="images/rotate-paste.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/rotate-paste.png" alt=""><span class="img-wrapper"><img src="images/rotate-paste.png" alt=""></span></label></p>
 <p><code>//flip</code> does flipping. Specify the direction to flip to (n/s/e/w/u/d/ne/nw/se/sw). For example, <code>//flip n</code> to flip it in the north-south direction.</p>
 <p>In this image, the center is the original cube, and north is to the top-right. The left cube is a result of <code>//flip n</code>/<code>s</code>, and the right <code>//flip e</code>/<code>w</code>.
-<img src="images/flip-paste.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/flip-paste.png" alt=""><span class="img-wrapper"><img src="images/flip-paste.png" alt=""></span></label></p>
 <p>Note that these are done relative to the player’s point when the contents are copied to the clipboard.</p>
 <p>Both of these by default rotate and flip along the horizontal plane. Rotating and flipping along the vertical plane is covered in TODO.</p>
 <div style="break-before: page; page-break-before: always;"></div>
@@ -298,38 +298,38 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 <li><code>-s</code> to shift the selection to the last section stacked.</li>
 </ul>
 <p>This image shows the result of <code>//stack 3 u</code>: 3 copies over the original copy.
-<img src="images/stack-3-up.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/stack-3-up.png" alt=""><span class="img-wrapper"><img src="images/stack-3-up.png" alt=""></span></label></p>
 <p>This image shows the result of <code>//stack 3 u -s</code>: same as above but the selection is moved to the last/furthermost copy.
-<img src="images/stack-3-up-s.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/stack-3-up-s.png" alt=""><span class="img-wrapper"><img src="images/stack-3-up-s.png" alt=""></span></label></p>
 <p>This image shows the result of <code>//stack 3 up -m red_wool</code>: only the red wool is stacked.
-<img src="images/stack-3-up-m-red-wool.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/stack-3-up-m-red-wool.png" alt=""><span class="img-wrapper"><img src="images/stack-3-up-m-red-wool.png" alt=""></span></label></p>
 <p>More about <code>//stack</code> is covered in TODO.</p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="fill-and-fillr"><a class="header" href="#fill-and-fillr">//fill and //fillr</a></h1>
 <p>Both fill a hole or depression, and do not need a selection. They consider all the air around and under the player’s feet and fills it with the specified block(s).</p>
 <p>For example, if I were to be standing on the side of a valley, <code>//fill stone 10</code> would cover the valley with stone within 10 blocks of the player, but below the stone is air.
-<img src="images/fill-stone-10.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/fill-stone-10.png" alt=""><span class="img-wrapper"><img src="images/fill-stone-10.png" alt=""></span></label></p>
 <p>An extra number, like in <code>//fill stone 15 6</code> would fill for the Y-levels between that of the player’s feet and 6-1=5 blocks below that.
-<img src="images/fill-stone-15-6.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/fill-stone-15-6.png" alt=""><span class="img-wrapper"><img src="images/fill-stone-15-6.png" alt=""></span></label></p>
 <p>The difference between <code>//fill</code> and <code>//fillr</code> is shown below: it fills any air pockets below the top Y-level.</p>
 <p>For example, these show <code>//fillr stone 10 6</code> and <code>//fillr stone 15 6</code> respectively:
-<img src="images/fillr-stone-10-6.png" alt="">
-<img src="images/fillr-stone-15-6.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/fillr-stone-10-6.png" alt=""><span class="img-wrapper"><img src="images/fillr-stone-10-6.png" alt=""></span></label>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/fillr-stone-15-6.png" alt=""><span class="img-wrapper"><img src="images/fillr-stone-15-6.png" alt=""></span></label></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="line-and-center"><a class="header" href="#line-and-center">//line and //center</a></h1>
 <p>These are the p1 and p2 that we will be using:
-<img src="images/line-center-prep.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/line-center-prep.png" alt=""><span class="img-wrapper"><img src="images/line-center-prep.png" alt=""></span></label></p>
 <p><code>//line</code> draws a line of blocks between p1 and p2. For example, <code>//line stone,andesite</code> draws a line of stone and andesite.
-<img src="images/line.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/line.png" alt=""><span class="img-wrapper"><img src="images/line.png" alt=""></span></label></p>
 <p><code>//center</code> sets 1-8 blocks at the midpoint of p1 and p2. For example, <code>//center stone</code> sets the midpoint to stone.
-<img src="images/center.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/center.png" alt=""><span class="img-wrapper"><img src="images/center.png" alt=""></span></label></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="move"><a class="header" href="#move">//move</a></h1>
 <p>This moves the selection to a direction, given the number of blocks to move and a direction.</p>
 <p>For example, <code>//move 5 w</code> moves the blocks in the selection 5 blocks to the west.
-<img src="images/move-5-w.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/move-5-w.png" alt=""><span class="img-wrapper"><img src="images/move-5-w.png" alt=""></span></label></p>
 <p><strong>Note that the selection by itself does not move along with the blocks, use <code>-s</code> to also move the selection.</strong>
-<img src="images/move-5-w-s.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/move-5-w-s.png" alt=""><span class="img-wrapper"><img src="images/move-5-w-s.png" alt=""></span></label></p>
 <p>It accepts the following flags:</p>
 <ul>
 <li><code>-a</code> to prevent air from being moved along with the contents.</li>
@@ -338,7 +338,7 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 <li><code>-s</code> to also move the selection along with the blocks.</li>
 </ul>
 <p>This image shows the result of <code>//move 5 w -m red_wool</code>.
-<img src="images/move-5-w-m-red-wool.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/move-5-w-m-red-wool.png" alt=""><span class="img-wrapper"><img src="images/move-5-w-m-red-wool.png" alt=""></span></label></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="undo-and-redo"><a class="header" href="#undo-and-redo">//undo and //redo</a></h1>
 <p>Similar to <code>Ctrl+Z</code> and <code>Ctrl+Y</code>/<code>Ctrl+Shift+Z</code>, //undo and //redo can undo and redo operations.</p>
@@ -361,7 +361,7 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 <p><code>//size</code>, among other things, prints information about the selection. <strong>This can be done without a conductor.</strong></p>
 <p>Among other things, it prints useful information like distance between points and the area of your selection.</p>
 <p>Useful applications include measuring the distance between places and dividing a structure into parts to fit under the operation limit of WorldEdit.
-<img src="images/size.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/size.png" alt=""><span class="img-wrapper"><img src="images/size.png" alt=""></span></label></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="tool-tree-and-tool-deltree"><a class="header" href="#tool-tree-and-tool-deltree">/tool tree and /tool deltree</a></h1>
 <p><code>/tool tree</code>, or <code>/tree</code> lets you plant trees without using saplings. <strong>It can be done without a conductor and a selection.</strong></p>
@@ -376,16 +376,16 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 <h1 id="selection-2-shift-expand-contract-inset-outset"><a class="header" href="#selection-2-shift-expand-contract-inset-outset">Selection 2 (//shift, //expand, //contract, //inset, //outset)</a></h1>
 <p>This isn’t really considered basic, but I added it here because it is a massive time-saver.</p>
 <p><code>//shift</code> shifts the selection a certain number of blocks in a direction. It is similar to <code>//move</code> but the selection is moved instead of the contents. For example, <code>//shift 5 w</code> moves the selection 5 blocks to the west.
-<img src="images/shift-5-w.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/shift-5-w.png" alt=""><span class="img-wrapper"><img src="images/shift-5-w.png" alt=""></span></label></p>
 <p><code>//expand</code> expands the selection a certain number of blocks towards a direction. For example, <code>//expand 4 u</code> expands the selection 4 blocks upward.
-<img src="images/expand-4-u.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/expand-4-u.png" alt=""><span class="img-wrapper"><img src="images/expand-4-u.png" alt=""></span></label></p>
 <p><code>//contract</code> contracts the selection instead. Think of it as pushing the selection back a certain number of blocks from a direction. For example, <code>//contract 2 d</code> renoves 2 layers from the top of the selection.
-<img src="images/contract-2-d.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/contract-2-d.png" alt=""><span class="img-wrapper"><img src="images/contract-2-d.png" alt=""></span></label></p>
 <p><code>//outset</code> and <code>//inset</code> are kind of like shortcuts for doing multiple <code>//expand</code>s and <code>//contract</code>s respectively. <code>//outset</code> expands the selection in all 6 directions, eg. <code>//outset 2</code>:
-<img src="images/outset-2.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/outset-2.png" alt=""><span class="img-wrapper"><img src="images/outset-2.png" alt=""></span></label></p>
 <p>It can also expand in only horizontal or vertical directions with the <code>-h</code> and <code>-v</code> flag respectively, eg. <code>//outset -h 2</code> and <code>//outset -v 2</code>:
-<img src="images/outset-h-2.png" alt="">
-<img src="images/outset-v-2.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/outset-h-2.png" alt=""><span class="img-wrapper"><img src="images/outset-h-2.png" alt=""></span></label>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/outset-v-2.png" alt=""><span class="img-wrapper"><img src="images/outset-v-2.png" alt=""></span></label></p>
 <p><code>//inset</code> is the reverse and contracts the selection instead, with the same flags.</p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="quiz"><a class="header" href="#quiz">Quiz</a></h1>
@@ -415,7 +415,7 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 <p>If you have any questions about WorldEdit, feel free to ask conductors, staff or anyone experienced in WorldEdit.</p>
 <p>If you think some parts in this tutorial are unclear or you think something is basic enough for this section, feel free to let MRT Mapping Services know.</p>
 <p>Otherwise happy WorldEditing and don’t upset the conductors and staff :)
-<img src="images/beginner-finale.png" alt=""></p>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/beginner-finale.png" alt=""><span class="img-wrapper"><img src="images/beginner-finale.png" alt=""></span></label></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="block-masks"><a class="header" href="#block-masks">Block Masks</a></h1>
 <p>Masks are used to select specific blocks from a selection or region. It is used in commands like <code>//replace</code> and flags like <code>-m</code>.</p>
@@ -502,7 +502,7 @@ If a conductor is doing a w/e for you, remember to specify copy/cut/paste points
 
         <script src="clipboard-1626706a.min.js"></script>
         <script src="highlight-abc7f01d.js"></script>
-        <script src="book-c22b7243.js"></script>
+        <script src="book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
 
